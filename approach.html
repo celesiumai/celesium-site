@@ -11,6 +11,10 @@
   <meta property="og:title" content="How it works — CelesiumAI">
   <meta property="og:description" content="Every answer comes with its proof — the answer, the exact rule, the work shown, and the method disclosed.">
   <meta property="og:site_name" content="CelesiumAI">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How it works — CelesiumAI">
+  <meta name="twitter:description" content="Every answer comes with its proof — the answer, the exact rule, the work shown, and the method disclosed.">
+  <meta name="theme-color" content="#141720">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,6 +30,11 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',-apple-system,sans-serif;background:var(--warm);color:var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* A11Y */
+.skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--teal);color:#fff;padding:12px 20px;border-radius:0 0 8px 0;font-weight:600;font-size:14px;text-decoration:none}
+.skip:focus{left:0}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--teal-b);outline-offset:3px;border-radius:4px}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 48px;height:64px;display:flex;align-items:center;justify-content:space-between;background:rgba(20,23,32,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
@@ -133,9 +142,10 @@ footer{padding:32px 20px;flex-direction:column;align-items:flex-start}.ft-r{text
 </style>
 </head>
 <body id="top">
+<a href="#main" class="skip">Skip to content</a>
 <nav><a href="/" class="nav-logo">Celesium<span>AI</span></a><button class="nav-burger" aria-label="Menu" aria-expanded="false" onclick="const o=this.classList.toggle('open');document.querySelector('.nav-links').classList.toggle('nav-open');this.setAttribute('aria-expanded',o)"><span></span><span></span><span></span></button><div class="nav-links"><a href="/portfolio.html">Solutions</a><a href="/approach.html" class="here">How it works</a><a href="/security.html">Security</a><a href="/leadership.html">Leadership</a><a href="/contact.html" class="nav-cta">Request a demo</a></div></nav>
 
-<main>
+<main id="main">
 <section class="phero"><div class="phero-g"></div><div class="phero-in">
   <div class="phero-ey">How it works · The method</div>
   <h1>AI you can <em>defend.</em></h1>
