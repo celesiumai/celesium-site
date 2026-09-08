@@ -133,7 +133,7 @@ footer{padding:32px 20px;flex-direction:column;align-items:flex-start}.ft-r{text
 </style>
 </head>
 <body id="top">
-<nav><a href="/" class="nav-logo">Celesium<span>AI</span></a><button class="nav-burger" aria-label="Menu" onclick="this.classList.toggle('open');document.querySelector('.nav-links').classList.toggle('nav-open')"><span></span><span></span><span></span></button><div class="nav-links"><a href="/portfolio.html">Solutions</a><a href="/approach.html" class="here">How it works</a><a href="/security.html">Security</a><a href="/leadership.html">Leadership</a><a href="/contact.html" class="nav-cta">Request a demo</a></div></nav>
+<nav><a href="/" class="nav-logo">Celesium<span>AI</span></a><button class="nav-burger" aria-label="Menu" aria-expanded="false" onclick="const o=this.classList.toggle('open');document.querySelector('.nav-links').classList.toggle('nav-open');this.setAttribute('aria-expanded',o)"><span></span><span></span><span></span></button><div class="nav-links"><a href="/portfolio.html">Solutions</a><a href="/approach.html" class="here">How it works</a><a href="/security.html">Security</a><a href="/leadership.html">Leadership</a><a href="/contact.html" class="nav-cta">Request a demo</a></div></nav>
 
 <main>
 <section class="phero"><div class="phero-g"></div><div class="phero-in">

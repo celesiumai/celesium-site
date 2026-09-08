@@ -61,7 +61,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 48px;height:64px;d
 .fig{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);border:1px solid rgba(13,115,119,.3);padding:4px 10px;border-radius:4px;display:inline-block;margin-bottom:16px}
 
 /* PLATFORM GRID */
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:1000px;margin:0 auto}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:1000px;margin:0 auto}
 
 /* CARDS — text-forward, sector accent */
 .card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:14px;transition:all .35s cubic-bezier(.2,.8,.3,1);cursor:pointer;text-decoration:none;color:inherit;display:block;overflow:hidden;position:relative}
@@ -146,7 +146,7 @@ nav{padding:0 20px}.nav-burger{display:flex;flex-direction:column;justify-conten
 .nav-links.nav-open{display:flex}.nav-links a{padding:14px 0;font-size:16px;border-bottom:1px solid rgba(255,255,255,.06)}
 .nav-links a.here::after{display:none}.nav-cta{margin-top:8px;text-align:center}
 .phero{padding:108px 20px 64px}.sec{padding:64px 20px}.dark{padding:64px 20px}.cta{padding:76px 20px}
-.grid{grid-template-columns:1fr}.step{gap:16px}.step .n{width:34px;height:34px;font-size:12px}
+.grid{grid-template-columns:1fr;gap:16px}.step{gap:16px}.step .n{width:34px;height:34px;font-size:12px}
 .cta-act{flex-direction:column;align-items:center}.btn-t,.btn-o{width:100%;max-width:320px;text-align:center}
 footer{padding:32px 20px;flex-direction:column;align-items:flex-start}.ft-r{text-align:left}.ft-links{justify-content:flex-start}
 }
@@ -154,7 +154,7 @@ footer{padding:32px 20px;flex-direction:column;align-items:flex-start}.ft-r{text
 </style>
 </head>
 <body id="top">
-<nav><a href="/" class="nav-logo">Celesium<span>AI</span></a><button class="nav-burger" aria-label="Menu" onclick="this.classList.toggle('open');document.querySelector('.nav-links').classList.toggle('nav-open')"><span></span><span></span><span></span></button><div class="nav-links"><a href="/portfolio.html" class="here">Solutions</a><a href="/approach.html">How it works</a><a href="/security.html">Security</a><a href="/leadership.html">Leadership</a><a href="/contact.html" class="nav-cta">Request a demo</a></div></nav>
+<nav><a href="/" class="nav-logo">Celesium<span>AI</span></a><button class="nav-burger" aria-label="Menu" aria-expanded="false" onclick="const o=this.classList.toggle('open');document.querySelector('.nav-links').classList.toggle('nav-open');this.setAttribute('aria-expanded',o)"><span></span><span></span><span></span></button><div class="nav-links"><a href="/portfolio.html" class="here">Solutions</a><a href="/approach.html">How it works</a><a href="/security.html">Security</a><a href="/leadership.html">Leadership</a><a href="/contact.html" class="nav-cta">Request a demo</a></div></nav>
 
 <main>
 <section class="phero"><div class="phero-g"></div><div class="phero-in">
