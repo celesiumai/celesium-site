@@ -22,6 +22,31 @@
   <meta name="theme-color" content="#141720">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/css/fonts.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "CelesiumAI",
+    "legalName": "Celesium AI LLC",
+    "url": "https://celesium.ai/",
+    "logo": "https://celesium.ai/favicon.svg",
+    "image": "https://celesium.ai/img/og.jpg",
+    "description": "AI solutions for enterprise in regulated industries: healthcare, finance, legal, and government.",
+    "email": "info@celesium.ai",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "6222 Richmond, Ste 170",
+      "addressLocality": "Houston",
+      "addressRegion": "TX",
+      "postalCode": "77057",
+      "addressCountry": "US"
+    },
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Celesium Capital"
+    }
+  }
+  </script>
 <style>
 :root {
   --ink:#141720;--teal:#0D7377;--teal-b:#12978C;--ocean:#1A6B9A;
@@ -140,8 +165,13 @@ footer{padding:48px 48px 32px;background:var(--ink);color:rgba(255,255,255,.5);d
 .ft-links a{font-size:13px;color:rgba(255,255,255,.4);text-decoration:none}.ft-links a:hover{color:rgba(255,255,255,.7)}
 .ft-copy{font-size:12px;color:rgba(255,255,255,.2)}
 
+/* REVEAL */
+.rev{opacity:0;transform:translateY(22px);transition:opacity .65s cubic-bezier(.16,1,.3,1),transform .65s cubic-bezier(.16,1,.3,1)}
+.rev.vis{opacity:1;transform:none}
+.card.rev:hover{transform:translateY(-3px)}
+
 @media(max-width:768px){nav{padding:0 20px}.nav-burger{display:flex;flex-direction:column;justify-content:center}.nav-links{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(20,23,32,.97);backdrop-filter:blur(16px);flex-direction:column;padding:24px 20px;gap:0;border-top:1px solid rgba(255,255,255,.06)}.nav-links.nav-open{display:flex}.nav-links a{padding:14px 0;font-size:16px;border-bottom:1px solid rgba(255,255,255,.06)}.nav-cta{margin-top:8px;text-align:center}.hero{padding:100px 20px 60px}.hero-stats{gap:24px}.stat-n{font-size:30px}.platforms{padding:60px 20px 80px}.grid{grid-template-columns:1fr;gap:16px}.differ{padding:60px 20px}.ip-band{padding:40px 20px;flex-direction:column;text-align:center}.cta{padding:80px 20px}.cta-act{flex-direction:column;align-items:center}footer{padding:32px 20px;flex-direction:column;align-items:flex-start}.ft-r{text-align:left}.ft-links{justify-content:flex-start}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important}.rev{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -175,37 +205,42 @@ footer{padding:48px 48px 32px;background:var(--ink);color:rgba(255,255,255,.5);d
   </div>
 </section>
 
-<section class="platforms"><div class="sh"><div class="sh-ey">Live with customers</div><h2>Nine platforms. <em>Each answers a real question.</em></h2></div>
+<section class="platforms"><div class="sh rev"><div class="sh-ey">Live with customers</div><h2>Nine platforms. <em>Each answers a real question.</em></h2></div>
 <div class="grid">
 
-  <a href="https://billxm.com" class="card" data-sector="health" target="_blank"><div class="card-body"><div class="card-meta"><span class="card-dom">Healthcare</span><span class="card-live">Live</span></div><div class="card-name">BillXM</div><div class="card-url">billxm.com</div><div class="card-q">"Is this medical bill correct?"</div></div></a>
+  <a href="https://billxm.com" class="card rev" data-sector="health" target="_blank"><div class="card-body"><div class="card-meta"><span class="card-dom">Healthcare</span><span class="card-live">Live</span></div><div class="card-name">BillXM</div><div class="card-url">billxm.com</div><div class="card-q">"Is this medical bill correct?"</div></div></a>
 
-  <a href="https://quarare.com" class="card" data-sector="legal" target="_blank"><div class="card-body"><div class="card-meta"><span class="card-dom">Legal</span><span class="card-live">Live</span></div><div class="card-name">Quarare</div><div class="card-url">quarare.com</div><div class="card-q">"Will this expert report hold up?"</div></div></a>
+  <a href="https://quarare.com" class="card rev" data-sector="legal" target="_blank"><div class="card-body"><div class="card-meta"><span class="card-dom">Legal</span><span class="card-live">Live</span></div><div class="card-name">Quarare</div><div class="card-url">quarare.com</div><div class="card-q">"Will this expert report hold up?"</div></div></a>
 
-  <a href="https://vigilarx.com" class="card" data-sector="research" target="_blank"><div class="card-body"><div class="card-meta"><span class="card-dom">Research Security</span><span class="card-live">Live</span></div><div class="card-name">Vigilarx</div><div class="card-url">vigilarx.com</div><div class="card-q">"Can we trust this research partner?"</div></div></a>
+  <a href="https://vigilarx.com" class="card rev" data-sector="research" target="_blank"><div class="card-body"><div class="card-meta"><span class="card-dom">Research Security</span><span class="card-live">Live</span></div><div class="card-name">Vigilarx</div><div class="card-url">vigilarx.com</div><div class="card-q">"Can we trust this research partner?"</div></div></a>
 
-  <a href="https://cclinic.com" class="card" data-sector="health" target="_blank"><div class="card-body"><div class="card-meta"><span class="card-dom">Healthcare</span><span class="card-live">Live</span></div><div class="card-name">CClinic</div><div class="card-url">cclinic.com</div><div class="card-q">"Can my doctor spend the visit on me?"</div></div></a>
+  <a href="https://cclinic.com" class="card rev" data-sector="health" target="_blank"><div class="card-body"><div class="card-meta"><span class="card-dom">Healthcare</span><span class="card-live">Live</span></div><div class="card-name">CClinic</div><div class="card-url">cclinic.com</div><div class="card-q">"Can my doctor spend the visit on me?"</div></div></a>
 
-  <a href="https://vainture.com" class="card" data-sector="venture" target="_blank"><div class="card-body"><div class="card-meta"><span class="card-dom">Venture</span><span class="card-live">Live</span></div><div class="card-name">Vainture</div><div class="card-url">vainture.com</div><div class="card-q">"Is this invention worth pursuing?"</div></div></a>
+  <a href="https://vainture.com" class="card rev" data-sector="venture" target="_blank"><div class="card-body"><div class="card-meta"><span class="card-dom">Venture</span><span class="card-live">Live</span></div><div class="card-name">Vainture</div><div class="card-url">vainture.com</div><div class="card-q">"Is this invention worth pursuing?"</div></div></a>
 
-  <a href="https://midarx.com" class="card" data-sector="finance" target="_blank"><div class="card-body"><div class="card-meta"><span class="card-dom">Finance</span><span class="card-live">Live</span></div><div class="card-name">Midarx</div><div class="card-url">midarx.com</div><div class="card-q">"Is the bank's exchange rate fair?"</div></div></a>
+  <a href="https://midarx.com" class="card rev" data-sector="finance" target="_blank"><div class="card-body"><div class="card-meta"><span class="card-dom">Finance</span><span class="card-live">Live</span></div><div class="card-name">Midarx</div><div class="card-url">midarx.com</div><div class="card-q">"Is the bank's exchange rate fair?"</div></div></a>
 
-  <a href="https://thalarx.com" class="card" data-sector="payer" target="_blank"><div class="card-body"><div class="card-meta"><span class="card-dom">Revenue Integrity</span><span class="card-live">Live</span></div><div class="card-name">Thalarx</div><div class="card-url">thalarx.com</div><div class="card-q">"Are we being paid what we're owed?"</div></div></a>
+  <a href="https://thalarx.com" class="card rev" data-sector="payer" target="_blank"><div class="card-body"><div class="card-meta"><span class="card-dom">Revenue Integrity</span><span class="card-live">Live</span></div><div class="card-name">Thalarx</div><div class="card-url">thalarx.com</div><div class="card-q">"Are we being paid what we're owed?"</div></div></a>
 
 
-  <a href="https://intelarx.net" class="card" data-sector="gov" target="_blank"><div class="card-body"><div class="card-meta"><span class="card-dom">Government</span><span class="card-live">Live</span></div><div class="card-name">Intelarx</div><div class="card-url">intelarx.net</div><div class="card-q">"Is this application compliant?"</div></div></a>
+  <a href="https://intelarx.net" class="card rev" data-sector="gov" target="_blank"><div class="card-body"><div class="card-meta"><span class="card-dom">Government</span><span class="card-live">Live</span></div><div class="card-name">Intelarx</div><div class="card-url">intelarx.net</div><div class="card-q">"Is this application compliant?"</div></div></a>
 
-  <a href="https://vermerit.com" class="card" data-sector="health" target="_blank"><div class="card-body"><div class="card-meta"><span class="card-dom">Healthcare</span><span class="card-live">Live</span></div><div class="card-name">Vermerit</div><div class="card-url">vermerit.com</div><div class="card-q">"Was every applicant judged fairly?"</div></div></a>
+  <a href="https://vermerit.com" class="card rev" data-sector="health" target="_blank"><div class="card-body"><div class="card-meta"><span class="card-dom">Healthcare</span><span class="card-live">Live</span></div><div class="card-name">Vermerit</div><div class="card-url">vermerit.com</div><div class="card-q">"Was every applicant judged fairly?"</div></div></a>
 
 </div></section>
 
-<section class="differ"><div class="differ-glow"></div><div class="differ-in"><h2>Every answer comes with the <em>rule behind it.</em></h2><p class="differ-sub">Not a chatbot. Not a wrapper. Each platform runs on technology we built and patented — your data stays yours, and the result holds up to audit.</p><div class="differ-pills"><span class="differ-pill">Source-cited</span><span class="differ-pill">Auditable</span><span class="differ-pill">Your data stays yours</span><span class="differ-pill">Tenant-isolated</span></div></div></section>
+<section class="differ"><div class="differ-glow"></div><div class="differ-in rev"><h2>Every answer comes with the <em>rule behind it.</em></h2><p class="differ-sub">Not a chatbot. Not a wrapper. Each platform runs on technology we built and patented — your data stays yours, and the result holds up to audit.</p><div class="differ-pills"><span class="differ-pill">Source-cited</span><span class="differ-pill">Auditable</span><span class="differ-pill">Your data stays yours</span><span class="differ-pill">Tenant-isolated</span></div></div></section>
 
-<div class="ip-band"><div class="ip-n">18</div><div class="ip-t"><strong>U.S. patent applications on file.</strong><p>The defensibility layer underneath every platform is our own invention, not a repackaged model.</p></div></div>
+<div class="ip-band rev"><div class="ip-n">18</div><div class="ip-t"><strong>U.S. patent applications on file.</strong><p>The defensibility layer underneath every platform is our own invention, not a repackaged model.</p></div></div>
 
-<section class="cta"><h2>See it <em>work.</em></h2><p class="cta-sub">Pick the decision costing your team the most. We'll show you the platform that backs the answer.</p><div class="cta-act"><a href="/contact" class="btn-c">Request a demo</a><a href="/library" class="btn-c2">Try the library</a></div></section>
+<section class="cta"><div class="rev"><h2>See it <em>work.</em></h2><p class="cta-sub">Pick the decision costing your team the most. We'll show you the platform that backs the answer.</p><div class="cta-act"><a href="/contact" class="btn-c">Request a demo</a><a href="/library" class="btn-c2">Try the library</a></div></div></section>
 
 </main>
 
 <footer><div><div class="ft-logo">Celesium<span>AI</span></div><div class="ft-addr">6222 Richmond, Ste 170<br>Houston, TX 77057<br><a href="mailto:info@celesium.ai">info@celesium.ai</a></div></div><div class="ft-r"><div class="ft-links"><a href="/portfolio">Solutions</a><a href="/approach">How it works</a><a href="/security">Security</a><a href="/leadership">Leadership</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a></div><div class="ft-copy">© 2026 Celesium AI LLC</div></div></footer>
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rev').forEach(el=>io.observe(el));
+</script>
 </body></html>
