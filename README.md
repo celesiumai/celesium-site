@@ -1,53 +1,70 @@
 # celesium-site
 
-Brand website for **CelesiumAI LLC** — the AI development studio arm of Celesium Capital.
+Brand website for **CelesiumAI LLC**, the technology arm of Celesium Capital.
 
 Live at: [celesium.ai](https://celesium.ai)
 
 ## Stack
 
-Static HTML / CSS / vanilla JS. No build step. Deployed on Vercel.
+Static HTML / CSS / vanilla JS. Each page carries its own `<style>` block. Deployed on Vercel, with one serverless function for the contact form.
 
 ## Structure
 
 ```
 .
 ├── index.html          Home
-├── portfolio.html      Products (BillXM, Vigilarx, Intelarx, CClinic, AI Incubator)
-├── services.html       Services + process
-├── about.html          Studio, leadership, parent company
-├── contact.html        Contact form (Formspree) + office info
-├── css/style.css       Design system
-├── js/main.js          Mobile nav
-├── favicon.svg         Constellation mark
+├── portfolio.html      Solutions: the nine live platforms
+├── approach.html       How it works: proof chain, build sequence, boundaries
+├── security.html       Security & trust
+├── leadership.html     Leadership team and company structure
+├── contact.html        Demo request form + office info
+├── privacy.html        Privacy policy
+├── api/contact.js      Contact form handler (sends via Resend)
+├── css/fonts.css       Self-hosted fonts (files in fonts/)
+├── img/                Open Graph image and other assets
+├── scripts/smoke.mjs   Build check (run by Vercel as `npm run build`)
+├── favicon.svg
 ├── robots.txt
 ├── sitemap.xml
-└── vercel.json         cleanUrls + security headers
+├── vercel.json         cleanUrls, /library rewrite, security headers
+└── .archive/v1/        Previous version of the site (not deployed)
 ```
 
 ## Local preview
 
-Any static server works. Quickest:
+The site uses clean URLs (`/portfolio`, not `/portfolio.html`), so use a server that supports them:
 
 ```bash
-python3 -m http.server 8000
-# then open http://localhost:8000
+npx serve .
+# then open http://localhost:3000
 ```
+
+`/library` is proxied to a separate app in production and won't load locally.
+
+## Build check
+
+```bash
+npm ci
+npm run smoke
+```
+
+Checks that every page parses, `sitemap.xml` is valid, `api/contact.js` has valid syntax, and every internal link resolves to a file. Vercel runs it on every deploy, so a broken link fails the build.
 
 ## Deploy
 
-Pushes to `main` auto-deploy to production on Vercel. Pushes to any other branch create a preview URL.
+Pushes to `main` auto-deploy to production on Vercel. Pushes to any other branch create a preview URL (behind Vercel login).
 
 ## Contact form
 
-The form on `contact.html` POSTs to Formspree (form ID `mzdyrgdk`). Submissions route to a Gmail inbox via Formspree's email notification.
+`contact.html` POSTs to `/api/contact`, which emails the submission through [Resend](https://resend.com). Environment variables in Vercel:
 
-To change the destination email: log into formspree.io → CelesiumAI Contact form → Workflow → Email action → update destination.
+- `RESEND_API_KEY` (required)
+- `NOTIFICATION_EMAIL`: where submissions go (defaults to `pphan@celesium.com`)
 
 ## Design tokens
 
-Defined in `css/style.css`:
+Defined in each page's `:root`:
 
-- Background: `#FAFAF5` (warm cream)
-- Product palette: `#2563EB` BillXM · `#374151` Vigilarx · `#059669` Intelarx · `#DB2777` CClinic · `#D97706` AI Incubator
-- Type: Outfit (headings) / DM Sans (body)
+- Ink (dark sections): `#141720` · Warm background: `#F7F6F3`
+- Accents: teal `#0D7377` / `#12978C`, ocean `#1A6B9A`, violet `#6B5CE7`, bronze `#C49A3C`
+- Type: Inter (text), JetBrains Mono (labels and stats)
