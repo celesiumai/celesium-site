@@ -6,7 +6,7 @@ Live at: [celesium.ai](https://celesium.ai)
 
 ## Stack
 
-Static HTML / CSS / vanilla JS. Each page carries its own `<style>` block. Deployed on Vercel, with one serverless function for the contact form.
+Static HTML / CSS / vanilla JS. Shared styles (tokens, nav, footer, page hero, buttons) live in `css/site.css`; each page's `<style>` block holds only what is specific to that page, plus the scroll-reveal rules, which must come after the page's own rules. The privacy page has its own minimal styles. Deployed on Vercel, with one serverless function for the contact form.
 
 ## Structure
 
@@ -21,6 +21,7 @@ Static HTML / CSS / vanilla JS. Each page carries its own `<style>` block. Deplo
 ├── privacy.html        Privacy policy
 ├── api/contact.js      Contact form handler (sends via Resend)
 ├── css/fonts.css       Self-hosted fonts (files in fonts/)
+├── css/site.css        Shared styles for every page except privacy
 ├── img/                Open Graph image and other assets
 ├── scripts/smoke.mjs   Build check (run by Vercel as `npm run build`)
 ├── favicon.svg
