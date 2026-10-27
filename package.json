@@ -2,7 +2,7 @@
   "name": "celesium-ai-site",
   "version": "2.0.0",
   "private": true,
-  "description": "celesium.ai — applied AI studio brand site",
+  "description": "celesium.ai — AI solutions for enterprise brand site",
   "scripts": {
     "build": "node scripts/smoke.mjs",
     "smoke": "node scripts/smoke.mjs"
