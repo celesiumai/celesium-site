@@ -22,7 +22,7 @@ Static HTML / CSS / vanilla JS. Shared styles (tokens, nav, footer, page hero, b
 ├── api/contact.js      Contact form handler (sends via Resend)
 ├── css/fonts.css       Self-hosted fonts (files in fonts/)
 ├── css/site.css        Shared styles for every page except privacy
-├── img/                Open Graph image and other assets
+├── img/                Share images (og-<page>.jpg, 1200×630) and platform card art (<platform>.svg)
 ├── scripts/smoke.mjs   Build check (run by Vercel as `npm run build`)
 ├── favicon.svg
 ├── robots.txt
