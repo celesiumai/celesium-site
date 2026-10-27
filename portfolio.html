@@ -61,6 +61,7 @@
 .card-body{padding:28px 28px 24px}
 .card-art{aspect-ratio:5/2;overflow:hidden;border-radius:13px 13px 0 0;background:#141A33;border-bottom:1px solid var(--card-border)}
 .card-art img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:520px){.card-art{aspect-ratio:8/7}.card-art img{object-position:right center}.card-art img[src$="intelarx.svg"]{object-position:center}}
 .card-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
 .card-dom{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text3)}
 .card-live{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--green);display:flex;align-items:center;gap:5px}
