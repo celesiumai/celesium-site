@@ -28,6 +28,11 @@ function listHtmlAtRoot() {
 const REWRITE_PATHS = new Set(['/library']);
 const REWRITE_PREFIXES = ['/library/'];
 
+// vercel.json sets cleanUrls, so "/portfolio" is served from portfolio.html.
+function withCleanUrl(rel) {
+  return posix.extname(rel) === '' ? `${rel}.html` : rel;
+}
+
 function resolveInternalHref(rawHref, fromFile) {
   // Returns absolute filesystem path the href should resolve to, or null to skip.
   if (!rawHref) return null;
@@ -58,7 +63,7 @@ function resolveInternalHref(rawHref, fromFile) {
   if (rel === '' || rel.endsWith('/')) {
     rel = posix.join(rel, 'index.html');
   }
-  return resolve(repoRoot, rel);
+  return resolve(repoRoot, withCleanUrl(rel));
 }
 
 // --- 1. node --check on api/contact.js -----------------------------------
@@ -108,7 +113,7 @@ for (const loc of locs) {
   }
   let path = url.pathname;
   if (path === '/' || path === '') path = '/index.html';
-  const fsPath = resolve(repoRoot, path.replace(/^\//, ''));
+  const fsPath = resolve(repoRoot, withCleanUrl(path.replace(/^\//, '')));
   if (!existsSync(fsPath) || !statSync(fsPath).isFile()) {
     fail(`sitemap.xml references missing file: ${loc} -> ${fsPath}`);
   }
